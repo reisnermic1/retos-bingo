@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50th Birthday Tech-Bingo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: "🎉";
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 2em;
+        }
+        
+        .header::after {
+            content: "🎂";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .bingo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin: 30px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .bingo-cell {
+            background: linear-gradient(145deg, #f0f2f5, #e1e8ed);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 500;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .bingo-cell:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+        
+        .bingo-cell.free {
+            background: linear-gradient(145deg, #ff6b6b, #ee5a24);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .bingo-cell.checked {
+            background: linear-gradient(145deg, #2ecc71, #27ae60);
+            color: white;
+            transform: scale(0.95);
+        }
+        
+        .bingo-cell.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .rules {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .rules h3 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .prize {
+            background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+            border: 3px solid #e17055;
+        }
+        
+        .prize h3 {
+            color: #d63031;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        
+        .prize p {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #2d3436;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            .bingo-grid {
+                gap: 4px;
+            }
+            
+            .bingo-cell {
+                font-size: 0.75em;
+                padding: 8px;
+                min-height: 60px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>50th Birthday Tech-Bingo</h1>
+            <p>Dein Jahr voller Abenteuer, Code und Maker-Magie!</p>
+        </div>
+        
+        <div class="content">
+            <div class="bingo-grid">
+                <div class="bingo-cell" onclick="toggleCell(this)">Neues Arduino-Projekt gestartet</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">SAP-Bug in unter 10 Minuten gefixt</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">50km+ Velotour geschafft</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Im Maker Space neues Tool ausprobiert</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Wanderung über 1000 Höhenmeter</div>
+                
+                <div class="bingo-cell" onclick="toggleCell(this)">3D-Druck beim ersten Versuch perfekt</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Kollegen SAP-Trick beigebracht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Fahrrad selbst repariert</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Neuen Trail entdeckt</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Raspberry Pi-Projekt abgeschlossen</div>
+                
+                <div class="bingo-cell" onclick="toggleCell(this)">Mit dem Velo zur Arbeit gefahren</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Workshop besucht</div>
+                <div class="bingo-cell free">🎂 HAPPY 50TH! 🎂</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">SAP-Modul komplett verstanden</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Gipfel erobert</div>
+                
+                <div class="bingo-cell" onclick="toggleCell(this)">Löt-Projekt erfolgreich</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Neuen Bike-Trail erkundet</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Code-Review ohne Fehler</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Projekt vollendet</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Wander-Fotosafari gemacht</div>
+                
+                <div class="bingo-cell" onclick="toggleCell(this)">Neues Maker-Tool gekauft</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">100km+ Bike-Tour</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">IT-Problem elegant gelöst</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Freundschaft geschlossen</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Berggipfel bei Sonnenaufgang</div>
+            </div>
+            
+            <div class="rules">
+                <h3>🎯 Spielregeln</h3>
+                <p><strong>Ziel:</strong> Sammle eine komplette Reihe (horizontal, vertikal oder diagonal) von 5 Feldern!</p>
+                <p><strong>Wie:</strong> Klicke auf ein Feld, wenn du die Aufgabe erfüllt hast. Das mittlere Feld ist bereits freigeschaltet - du startest mit einem Vorteil!</p>
+                <p><strong>Zeitraum:</strong> Du hast das ganze Jahr Zeit, um dein erstes BINGO zu schaffen.</p>
+                <p><strong>Tipp:</strong> Mache Screenshots deiner Fortschritte und teile sie mit deinen Freunden!</p>
+            </div>
+            
+            <div class="prize">
+                <h3>🏆 BINGO-Belohnung</h3>
+                <p><strong>Gönn dir einen Tag im besten Maker Space der Region!</strong></p>
+                <p>Plus: Bestell dir endlich das teure Arduino-Kit oder das Premium-Tool, das du schon lange willst. Du hast es dir verdient! 🎁</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Happy 50th Birthday! Möge dieses Jahr voller spannender Projekte, großartiger Trails und eleganter Code-Lösungen sein! 🚴‍♂️⚡🔧</p>
+        </div>
+    </div>
+
+    <script>
+        let checkedCells = [];
+        
+        function toggleCell(cell) {
+            if (cell.classList.contains('free')) return;
+            
+            if (cell.classList.contains('checked')) {
+                cell.classList.remove('checked');
+                const index = checkedCells.indexOf(cell);
+                if (index > -1) {
+                    checkedCells.splice(index, 1);
+                }
+            } else {
+                cell.classList.add('checked');
+                checkedCells.push(cell);
+                
+                // Check for BINGO
+                setTimeout(() => {
+                    if (checkForBingo()) {
+                        showBingoAlert();
+                    }
+                }, 300);
+            }
+        }
+        
+        function checkForBingo() {
+            const grid = document.querySelectorAll('.bingo-cell');
+            const checked = Array.from(grid).map(cell => cell.classList.contains('checked') || cell.classList.contains('free'));
+            
+            // Check rows
+            for (let row = 0; row < 5; row++) {
+                let count = 0;
+                for (let col = 0; col < 5; col++) {
+                    if (checked[row * 5 + col]) count++;
+                }
+                if (count === 5) return true;
+            }
+            
+            // Check columns
+            for (let col = 0; col < 5; col++) {
+                let count = 0;
+                for (let row = 0; row < 5; row++) {
+                    if (checked[row * 5 + col]) count++;
+                }
+                if (count === 5) return true;
+            }
+            
+            // Check diagonals
+            let diag1 = 0, diag2 = 0;
+            for (let i = 0; i < 5; i++) {
+                if (checked[i * 5 + i]) diag1++;
+                if (checked[i * 5 + (4 - i)]) diag2++;
+            }
+            if (diag1 === 5 || diag2 === 5) return true;
+            
+            return false;
+        }
+        
+        function showBingoAlert() {
+            // Create celebration overlay
+            const celebration = document.createElement('div');
+            celebration.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+                    <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 500px; animation: bounce 0.6s ease-in-out;">
+                        <div style="font-size: 4em; margin-bottom: 20px;">🎉🏆🎉</div>
+                        <h2 style="font-size: 2.5em; margin: 0 0 20px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">BINGO!</h2>
+                        <p style="font-size: 1.3em; margin: 0 0 20px 0;">Herzlichen Glückwunsch! Du hast eine komplette Reihe geschafft!</p>
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 20px 0;">
+                            <p style="font-size: 1.1em; margin: 0;"><strong>🎁 Deine Belohnung:</strong><br>
+                            Gönn dir einen Tag im besten Maker Space der Region plus das Premium-Tool deiner Wahl!</p>
+                        </div>
+                        <button onclick="this.parentElement.parentElement.remove()" style="background: white; color: #ff6b6b; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Awesome! 🚀</button>
+                    </div>
+                </div>
+                <style>
+                    @keyframes bounce {
+                        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                        40% { transform: translateY(-20px); }
+                        60% { transform: translateY(-10px); }
+                    }
+                </style>
+            `;
+            document.body.appendChild(celebration);
+            
+            // Add confetti effect
+            createConfetti();
+        }
+        
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ee5a24', '#667eea', '#764ba2', '#2ecc71', '#f39c12'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: fixed;
+                        width: 10px;
+                        height: 10px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        top: -10px;
+                        left: ${Math.random() * 100}%;
+                        z-index: 999;
+                        border-radius: 50%;
+                        animation: fall 3s linear forwards;
+                    `;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 100);
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
