@@ -131,6 +131,15 @@
             font-size: 1.3em;
         }
         
+        .rules ul {
+            padding-left: 20px;
+        }
+        
+        .rules li {
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+        
         .prize {
             background: linear-gradient(145deg, #ffeaa7, #fdcb6e);
             border-radius: 15px;
@@ -165,7 +174,7 @@
             }
             
             .bingo-cell {
-                font-size: 0.75em;
+                font-size: 0.7em;
                 padding: 8px;
                 min-height: 60px;
             }
@@ -189,50 +198,49 @@
         
         <div class="content">
             <div class="bingo-grid">
-                <div class="bingo-cell" onclick="toggleCell(this)">Neues Arduino-Projekt gestartet</div>
                 <div class="bingo-cell" onclick="toggleCell(this)">SAP-Bug in unter 10 Minuten gefixt</div>
                 <div class="bingo-cell" onclick="toggleCell(this)">50km+ Velotour geschafft</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Im Maker Space neues Tool ausprobiert</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Wanderung über 1000 Höhenmeter</div>
-                
+                <div class="bingo-cell" onclick="toggleCell(this)">Lustigen ABAP-Kommentar geschrieben</div>
                 <div class="bingo-cell" onclick="toggleCell(this)">3D-Druck beim ersten Versuch perfekt</div>
                 <div class="bingo-cell" onclick="toggleCell(this)">Kollegen SAP-Trick beigebracht</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Fahrrad selbst repariert</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Neuen Trail entdeckt</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Raspberry Pi-Projekt abgeschlossen</div>
                 
-                <div class="bingo-cell" onclick="toggleCell(this)">Mit dem Velo zur Arbeit gefahren</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Workshop besucht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Berggipfel bei Sonnenaufgang erreicht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Kein Fehler beim 1. Syntaxcheck</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Kuchen für SAP-CC mitgebracht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Wanderung mit der ganzen Familie geschafft</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Wanderroute mit GPS optimiert - trotzdem verlaufen</div>
+                
+                <div class="bingo-cell" onclick="toggleCell(this)">Backup von Backup vom Backup gemacht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Smalltalk mit Techno-Vokabular ruiniert</div>
                 <div class="bingo-cell free">🎂 HAPPY 50TH! 🎂</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">SAP-Modul komplett verstanden</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Gipfel erobert</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Claude gefragt, ob er menschlich ist</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Wanderung über 1000 Höhenmeter gemacht</div>
                 
-                <div class="bingo-cell" onclick="toggleCell(this)">Löt-Projekt erfolgreich</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Neuen Bike-Trail erkundet</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Code-Review ohne Fehler</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Projekt vollendet</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Wander-Fotosafari gemacht</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Regenradar gecheckt - 2 Sekunden später nass</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Projekt mit LEDs verschönert</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Neuen Bike-Trail entdeckt (ausserhalb Baselbiet)</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Neue Wanderroute entdeckt (ausserhalb Schweiz)</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Selfie mit fremdem MakerSpace gemacht</div>
                 
-                <div class="bingo-cell" onclick="toggleCell(this)">Neues Maker-Tool gekauft</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">100km+ Bike-Tour</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">IT-Problem elegant gelöst</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Maker Space-Freundschaft geschlossen</div>
-                <div class="bingo-cell" onclick="toggleCell(this)">Berggipfel bei Sonnenaufgang</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Mit voller Bike-Montur im Dorfladen gestanden</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Meeting mit „Ich halt mich kurz" begonnen – 20 Minuten später…</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">„Ich bin nicht alt, ich bin retro" gesagt</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Mehr Kabel gekauft – trotzdem fehlt eins</div>
+                <div class="bingo-cell" onclick="toggleCell(this)">Prompt geschrieben, als wäre's ein Roman</div>
             </div>
             
             <div class="rules">
                 <h3>🎯 Spielregeln</h3>
-                <p><strong>Ziel:</strong> Sammle eine komplette Reihe (horizontal, vertikal oder diagonal) von 5 Feldern!</p>
-                <p><strong>Wie:</strong> Klicke auf ein Feld, wenn du die Aufgabe erfüllt hast. Das mittlere Feld ist bereits freigeschaltet - du startest mit einem Vorteil!</p>
-                <p><strong>Zeitraum:</strong> Du hast das ganze Jahr Zeit, um dein erstes BINGO zu schaffen.</p>
-                <p><strong>Tipp:</strong> Mache Screenshots deiner Fortschritte und teile sie mit deinen Freunden!</p>
+                <ul>
+                    <li><strong>Ziel:</strong> Sammle eine komplette Reihe (horizontal, vertikal oder diagonal) von 5 Feldern!</li>
+                    <li><strong>Wie spielen:</strong> Klicke auf ein Feld, wenn du die Challenge erfüllt hast. Das mittlere Feld ist bereits freigeschaltet - du startest mit einem Vorteil!</li>
+                    <li><strong>Zeitraum:</strong> Du hast das ganze Jahr Zeit, um dein erstes BINGO zu schaffen.</li>
+                    <li><strong>Dokumentation:</strong> Mache Screenshots bzw. Fotos deiner Fortschritte und teile sie mit deinen Kollegen!</li>
+                    <li><strong>Herausforderung:</strong> Versuche nach dem ersten BINGO weitere Reihen zu sammeln - wieviele schaffst du?</li>
+                </ul>
             </div>
             
-            <div class="prize">
-                <h3>🏆 BINGO-Belohnung</h3>
-                <p><strong>Gönn dir einen Tag im besten Maker Space der Region!</strong></p>
-                <p>Plus: Bestell dir endlich das teure Arduino-Kit oder das Premium-Tool, das du schon lange willst. Du hast es dir verdient! 🎁</p>
-            </div>
+
         </div>
         
         <div class="footer">
@@ -309,9 +317,10 @@
                         <p style="font-size: 1.3em; margin: 0 0 20px 0;">Herzlichen Glückwunsch! Du hast eine komplette Reihe geschafft!</p>
                         <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; margin: 20px 0;">
                             <p style="font-size: 1.1em; margin: 0;"><strong>🎁 Deine Belohnung:</strong><br>
-                            Gönn dir einen Tag im besten Maker Space der Region plus das Premium-Tool deiner Wahl!</p>
+                            Du darfst beim nächsten SAP-Meeting einen Maker Space-Witz erzählen!<br>
+                            Und als besondere Ehre kannst du dir einen Tag aussuchen, an dem dich deine Kollegen mit 'Tech-Guru' ansprechen! :-)</p>
                         </div>
-                        <button onclick="this.parentElement.parentElement.remove()" style="background: white; color: #ff6b6b; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Awesome! 🚀</button>
+                        <button onclick="this.parentElement.parentElement.remove()" style="background: white; color: #ff6b6b; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Tech-Guru aktiviert! 🚀</button>
                     </div>
                 </div>
                 <style>
